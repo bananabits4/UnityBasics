@@ -1,0 +1,4 @@
+repository "Gameforsomething 2.0@kp009@cloud"
+  path "/"
+    br "/main"
+    co "/main"
