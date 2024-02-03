@@ -7,7 +7,7 @@ interface IInteractable{
 }
 
 
-public class taskopen : MonoBehaviour
+public class PlayerInteract : MonoBehaviour
 {
     public Transform cam;
     public float interactrange;
