@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class playermovement : MonoBehaviour
@@ -33,13 +31,10 @@ public class playermovement : MonoBehaviour
         float y = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * y;
-
         player.Move(move * speed * Time.deltaTime);
-
         velocity.y += gravity * Time.deltaTime;
-
         player.Move(velocity * Time.deltaTime);
 
-
+        
     }
 }
