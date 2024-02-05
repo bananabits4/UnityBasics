@@ -12,6 +12,8 @@ public class playermovement : MonoBehaviour
     public Transform groundcheck;
     public float grounddistance = 0.4f;
     public LayerMask groundmask;
+    [SerializeField]
+    AudioSource playerAudio;
 
     bool isGrounded;
     // Update is called once per frame
@@ -31,6 +33,22 @@ public class playermovement : MonoBehaviour
         float y = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * y;
+
+        // Check if the player is moving and play or stop the sound accordingly
+        if (move != Vector3.zero && isGrounded) // If the player is moving
+        {
+            if (!playerAudio.isPlaying) // If the sound is not playing
+            {
+                playerAudio.Play(); // Play the sound
+            }
+        }
+        else // If the player is not moving
+        {
+            if (playerAudio.isPlaying) // If the sound is playing
+            {
+                playerAudio.Stop(); // Stop the sound
+            }
+        }
         player.Move(move * speed * Time.deltaTime);
         velocity.y += gravity * Time.deltaTime;
         player.Move(velocity * Time.deltaTime);
