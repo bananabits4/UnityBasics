@@ -6,14 +6,14 @@ public class Vent : MonoBehaviour, IInteractable
 {
     public GameObject player;
     public GameObject ventcam;
-    public Transform pos;
+    public GameObject tovents;
 
-    public Vector3 offset;
     public void Interact()
     {
         Debug.Log("you reached the place");
         player.SetActive(false);
         
         ventcam.gameObject.SetActive(true);
+        tovents.SetActive(true);
     }
 }
