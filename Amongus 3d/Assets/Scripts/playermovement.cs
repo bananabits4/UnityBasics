@@ -14,6 +14,7 @@ public class playermovement : MonoBehaviour
     public LayerMask groundmask;
     [SerializeField]
     AudioSource playerAudio;
+    public Audiomanager manager ;
 
     bool isGrounded;
     // Update is called once per frame
@@ -27,12 +28,15 @@ public class playermovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && isGrounded){
             velocity.y = Mathf.Sqrt(-2f * gravity * jumpHeight);
+            manager.Play("Jump");
+            
         }
 
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * y;
+   
 
         // Check if the player is moving and play or stop the sound accordingly
         if (move != Vector3.zero && isGrounded) // If the player is moving
