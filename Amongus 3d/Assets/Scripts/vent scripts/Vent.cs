@@ -5,8 +5,6 @@ using System.Collections;
 public class Vent : MonoBehaviour, IInteractable
 {
     public GameObject player;//This is temporary 
-    [SerializeField] GameObject vent;
-    public int vent_cooldown = 30;
 
     public void Interact()
     {
@@ -17,8 +15,7 @@ public class Vent : MonoBehaviour, IInteractable
         //check all the conditions below
         //instead of assigining playerfrom inspector you will need to get it from the function calling parent script 
         player_data data = player.GetComponent<player_data>();
-        int vent_time = (int)(DateTime.Now - data.lastvented).TotalSeconds;
-        if ( vent_time> vent_cooldown && data.is_imposter && data.player_inside_vent == false)
+        if (data.is_imposter && data.player_inside_vent == false)
         {
             data.lastvented = DateTime.Now;
             //send a valid vent message to local player 
@@ -31,12 +28,14 @@ public class Vent : MonoBehaviour, IInteractable
             MeshRenderer playermesh = player.GetComponentInChildren<MeshRenderer>();
             playermesh.enabled = false;
             //Till here
-            player.transform.position = vent.transform.position;
+            player.transform.position = transform.position;
             StartCoroutine(venting());
+            GameObject tovent = transform.Find("fromvent").gameObject;
+            tovent.SetActive(true);
             //After this the server will return return the new postition to the local player 
 
         }
-        else if(data.player_inside_vent)
+        else if (data.player_inside_vent)
         {
 
             //The local player(including all crewmates) will run the below logic locally and the server will run it too and play a vent out soundsame upar wala par vented out ke saat 
@@ -45,6 +44,8 @@ public class Vent : MonoBehaviour, IInteractable
             MeshRenderer playermesh = player.GetComponentInChildren<MeshRenderer>();
             playermesh.enabled = true;
             data.player_inside_vent = false;
+            GameObject tovent = transform.Find("fromvent").gameObject;
+            tovent.SetActive(false);
             //Till here
             
         }
