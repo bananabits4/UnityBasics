@@ -3,6 +3,11 @@ using RiptideNetworking;
 using RiptideNetworking.Utils;
 using UnityEngine;
 
+
+public enum ServerToClientID : ushort{
+    playerSpawned = 1,
+}
+
 public enum ClientToServerID : ushort
 {
     name = 1,
@@ -60,18 +65,18 @@ public class NetworkManager : MonoBehaviour
 
     private void DidConnect(object sender, EventArgs e)
     {
-        UIManager.Singleton.SendName();
+        MainScreenManager.Singleton.SendName();
     }
 
     private void FailedToConnect(object sender, EventArgs e)
     {
-        UIManager.Singleton.BackToMain();
+        MainScreenManager.Singleton.BackToMain();
 
     }
 
     private void DidDisconnect(object sender, EventArgs e)
     {
-        UIManager.Singleton.BackToMain();
+        MainScreenManager.Singleton.BackToMain();
     }
 }
 

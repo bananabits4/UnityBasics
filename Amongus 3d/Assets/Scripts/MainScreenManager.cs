@@ -5,10 +5,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class MainScreenManager : MonoBehaviour
 {
-    private static UIManager _Singleton;
-    public static UIManager Singleton
+    private static MainScreenManager _Singleton;
+    public static MainScreenManager Singleton
     {
         get => _Singleton;
         private set
@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
                 _Singleton = value;
             else if (_Singleton != value)
             {
-                Debug.Log($"{nameof(UIManager)} instance already exists, destroying duplixcate!!!");
+                Debug.Log($"{nameof(MainScreenManager)} instance already exists, destroying duplixcate!!!");
                 Destroy(value);
             }
         }
