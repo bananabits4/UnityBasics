@@ -3,42 +3,7 @@ guid: c9f937c377b61ca409877b8048936de4
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 0080_Dar
-    second: {fileID: 2100000, guid: c634dfa5851c01c4aba8cfe21f095fd5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Boxes
-    second: {fileID: 2100000, guid: 941feea0011f49145961f9136a887a7f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Color_14
-    second: {fileID: 2100000, guid: 6aea111fade29254b857ca514a05e258, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Ground
-    second: {fileID: 2100000, guid: cca3ecd4fe104e54ba0d31201cbf50bf, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: More props
-    second: {fileID: 2100000, guid: 316ff75bc7d6c47439c469f0d25d9a1c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Props
-    second: {fileID: 2100000, guid: 8e5fc9104babf6043972970da0515108, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: walls
-    second: {fileID: 2100000, guid: e7fc018cbccd58f42b6918305106c640, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -105,8 +70,8 @@ ModelImporter:
     useFileScale: 1
     strictVertexDataChecks: 0
   tangentSpace:
-    normalSmoothAngle: 45
-    normalImportMode: 1
+    normalSmoothAngle: 60
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0

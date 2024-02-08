@@ -4549,7 +4549,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   task1: {fileID: 614409377}
-  crosshairs: {fileID: 945830039}
+  look: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1 &1815237343
 GameObject:
   m_ObjectHideFlags: 0
@@ -5396,6 +5397,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1535182902987308868, guid: 6dc3e4dc60718cd4481ba3ad91ad4281, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535182902987308868, guid: 6dc3e4dc60718cd4481ba3ad91ad4281, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.255
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535182902987308868, guid: 6dc3e4dc60718cd4481ba3ad91ad4281, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.67
+      objectReference: {fileID: 0}
     - target: {fileID: 2319345000749233047, guid: 6dc3e4dc60718cd4481ba3ad91ad4281, type: 3}
       propertyPath: m_Name
       value: player
@@ -5406,7 +5419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8378703231150065675, guid: 6dc3e4dc60718cd4481ba3ad91ad4281, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.31
+      value: 8.77
       objectReference: {fileID: 0}
     - target: {fileID: 8378703231150065675, guid: 6dc3e4dc60718cd4481ba3ad91ad4281, type: 3}
       propertyPath: m_LocalPosition.z
