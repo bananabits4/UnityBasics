@@ -1,7 +1,7 @@
 using UnityEngine;
 
 interface IInteractable{
-    public void Interact();
+    public void Interact(string type = "");
 }
 
 
@@ -21,6 +21,14 @@ public class PlayerInteract : MonoBehaviour
             if (Physics.Raycast(r, out RaycastHit hitInfo, interactrange)){
                 if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj)){
                     interactObj.Interact();
+            }
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Space)){
+            Ray r = new Ray(cam.position, cam.forward);
+            if (Physics.Raycast(r, out RaycastHit hitInfo, interactrange)){
+                if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObj)){
+                    interactObj.Interact("Exitvent");
             }
             }
         }

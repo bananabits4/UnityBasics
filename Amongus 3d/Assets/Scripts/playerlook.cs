@@ -7,6 +7,8 @@ public class playerlook : MonoBehaviour
     public Transform player;
     float xRotation = 0f;
 
+    
+
 
     // Start is called before the first frame update
     void Start()
