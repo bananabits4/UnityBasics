@@ -4,6 +4,8 @@ using RiptideNetworking;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MainScreenManager : MonoBehaviour
 {
@@ -25,7 +27,7 @@ public class MainScreenManager : MonoBehaviour
 
     [Header("Connect")]
     [SerializeField] private GameObject connectUI;
-    [SerializeField] private InputField usernameField;
+    [SerializeField] private TMP_InputField usernameField;
 
     private void Awake() {
         Singleton = this;
@@ -37,6 +39,8 @@ public class MainScreenManager : MonoBehaviour
         connectUI.SetActive(false);
 
         NetworkManager.Singleton.Connect();
+
+        
     }
 
     public void BackToMain()

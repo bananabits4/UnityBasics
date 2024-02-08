@@ -11,9 +11,21 @@ public class Player : MonoBehaviour
 
     private string username;
 
+    [SerializeField] private Transform camtransform;
+
     private void OnDestroy()
     {
         list.Remove(Id);
+    }
+
+    public void move(Vector3 newposition,Vector3 forward)
+    {
+        transform.position = newposition;
+
+        if (!IsLocal)
+        {
+            camtransform.forward = forward;
+        }
     }
 
     public static void Spawn(ushort id, string username, Vector3 position)
@@ -41,5 +53,11 @@ public class Player : MonoBehaviour
     private static void SpawnPlayer(Message message)
     {
         Spawn(message.GetUShort(), message.GetString(), message.GetVector3());
+    }
+    [MessageHandler((ushort)ServerToClientID.position)]
+    private static void PlayerMovement(Message message)
+    {
+        if(list.TryGetValue(message.GetUShort(),out Player player))
+            player.move(message.GetVector3(),message.GetVector3());
     }
 }

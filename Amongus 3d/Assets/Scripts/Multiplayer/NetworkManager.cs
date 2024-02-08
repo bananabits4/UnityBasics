@@ -2,16 +2,19 @@ using System;
 using RiptideNetworking;
 using RiptideNetworking.Utils;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public enum ServerToClientID : ushort{
     playerSpawned = 1,
+    position,
 }
 
-public enum ClientToServerID : ushort
-{
+public enum ClientToServerID : ushort{
     name = 1,
+    input,
 }
+
 
 public class NetworkManager : MonoBehaviour
 {
@@ -41,6 +44,7 @@ public class NetworkManager : MonoBehaviour
     }
 
     private void Start() {
+        DontDestroyOnLoad(gameObject);
         RiptideLogger.Initialize(Debug.Log, Debug.Log, Debug.LogWarning, Debug.LogError, false);
 
         Client = new Client();
@@ -66,6 +70,7 @@ public class NetworkManager : MonoBehaviour
     private void DidConnect(object sender, EventArgs e)
     {
         MainScreenManager.Singleton.SendName();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     private void FailedToConnect(object sender, EventArgs e)

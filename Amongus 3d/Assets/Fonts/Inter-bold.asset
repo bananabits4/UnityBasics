@@ -58,14 +58,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: Inter-Regular SDF
+  m_Name: Inter-bold
   m_EditorClassIdentifier: 
   hashCode: 1383506018
   material: {fileID: 8080227957196757686}
   materialHashCode: 2012274050
   m_Version: 1.1.0
-  m_SourceFontFileGUID: d10c21e4f9544274d925273c17c8a555
-  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: d10c21e4f9544274d925273c17c8a555, type: 3}
+  m_SourceFontFileGUID: 541bbe5c47ec52f44b4a5f31c1676552
+  m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 541bbe5c47ec52f44b4a5f31c1676552, type: 3}
   m_SourceFontFile: {fileID: 12800000, guid: 541bbe5c47ec52f44b4a5f31c1676552, type: 3}
   m_AtlasPopulationMode: 1
   m_FaceInfo:
@@ -778,7 +778,7 @@ MonoBehaviour:
     italicTypeface: {fileID: 0}
   - regularTypeface: {fileID: 0}
     italicTypeface: {fileID: 0}
-  - regularTypeface: {fileID: 11400000, guid: 9787bb46a5b8ce147b398437a20bf92d, type: 2}
+  - regularTypeface: {fileID: 0}
     italicTypeface: {fileID: 0}
   - regularTypeface: {fileID: 0}
     italicTypeface: {fileID: 0}

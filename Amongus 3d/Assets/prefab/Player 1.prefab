@@ -404,7 +404,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5995801334339227861}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ef33dcf5eb949442b486cc3b2243406, type: 3}
   m_Name: 
@@ -420,6 +420,7 @@ MonoBehaviour:
     m_Bits: 8
   playerAudio: {fileID: 2956571377547224236}
   manager: {fileID: 0}
+  playeranimation: {fileID: 0}
 --- !u!114 &6661184217004047884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -556,6 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185a476bedd13384c9015370098255ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camtransform: {fileID: 0}
 --- !u!1 &8807547115649230340
 GameObject:
   m_ObjectHideFlags: 0
