@@ -13,14 +13,16 @@ public class Player : MonoBehaviour
 
     [SerializeField] private Transform camtransform;
 
+    [SerializeField] private Interpolator interpolator;
+
     private void OnDestroy()
     {
         list.Remove(Id);
     }
 
-    public void move(Vector3 newposition,Vector3 forward)
+    public void move(ushort tick,bool isTeleport,Vector3 newposition,Vector3 forward)
     {
-        transform.position = newposition;
+        interpolator.NewUpdate(tick,isTeleport,newposition);
 
         if (!IsLocal)
         {
@@ -58,6 +60,6 @@ public class Player : MonoBehaviour
     private static void PlayerMovement(Message message)
     {
         if(list.TryGetValue(message.GetUShort(),out Player player))
-            player.move(message.GetVector3(),message.GetVector3());
+            player.move(message.GetUShort(),message.GetBool(),message.GetVector3(),message.GetVector3());
     }
 }

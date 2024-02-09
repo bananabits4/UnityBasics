@@ -1,11 +1,13 @@
 using RiptideNetworking;
 using RiptideNetworking.Utils;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 
 public enum ServerToClientID : ushort{
     playerSpawned = 1,
     position,
+    sync,
 }
 
 public enum ClientToServerID : ushort{
@@ -32,6 +34,7 @@ public class NetworkManager : MonoBehaviour
     }
 
     public Server Server {get; private set;}
+    public ushort current_tick {get; private set;} = 0;
 
     [SerializeField] private ushort port;
     [SerializeField] private ushort maxClientCount;
@@ -52,16 +55,33 @@ public class NetworkManager : MonoBehaviour
 
     private void FixedUpdate() {
         Server.Tick();
+        if (current_tick%250 == 0)
+        {
+            Send_Sync();
+        }
+
+        current_tick ++;
         }
 
     private void OnApplicationQuit() {
         Server.Stop();
     }
 
-    private void PlayerLeft(object sender, ClientDisconnectedEventArgs e)
+    private void PlayerLeft(object sender,ClientDisconnectedEventArgs e)
     {
-        Destroy(Player.list[e.Id].gameObject);
+        if (Player.list.TryGetValue(e.Id , out Player player))
+        {
+            Destroy(player.gameObject);
+        }
     }
+
+    private void Send_Sync()
+    {
+        Message message = Message.Create(MessageSendMode.unreliable,ServerToClientID.sync);
+        message.AddUShort(current_tick);
+        NetworkManager.Singleton.Server.SendToAll(message);
+    }
+
 
     
 }

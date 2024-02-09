@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2160325531192144974}
   - component: {fileID: 4820403098002202982}
   - component: {fileID: 6173725566046198482}
+  - component: {fileID: 7188697713528982623}
   m_Layer: 0
   m_Name: player 2
   m_TagString: Untagged
@@ -227,6 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camtransform: {fileID: 5090464297249522489}
+  interpolator: {fileID: 7188697713528982623}
 --- !u!114 &6173725566046198482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +242,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camers: {fileID: 5090464297249522489}
+--- !u!114 &7188697713528982623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2319345000749233047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fe8d1d739118034687054122ce326f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeElapsed: 0
+  timeToReachTarget: 0.05
+  movementThreshold: 0.05
 --- !u!1 &8045845642982957659
 GameObject:
   m_ObjectHideFlags: 0

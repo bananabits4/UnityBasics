@@ -22,6 +22,7 @@ public class playermovement : MonoBehaviour
     private float gravityaccn;
     private float movespeed;
     private float jumpspeed;
+    private bool didteleport;
 
 
 
@@ -116,8 +117,12 @@ public class playermovement : MonoBehaviour
 
     private void SendMovement()
     {
+        if (NetworkManager.Singleton.current_tick % 2 != 0)
+            return;
         Message message = Message.Create(MessageSendMode.unreliable,ServerToClientID.position);
         message.AddUShort(player.Id);
+        message.AddUShort(NetworkManager.Singleton.current_tick);
+        message.AddBool(didteleport);
         message.AddVector3(transform.position);
         message.AddVector3(camproxy.forward);
         NetworkManager.Singleton.Server.SendToAll(message);

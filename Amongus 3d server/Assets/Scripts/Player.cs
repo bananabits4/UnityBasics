@@ -57,6 +57,7 @@ public class Player : MonoBehaviour
     {
         Spawn(fromClientID, message.GetString());
     }
+    
     [MessageHandler((ushort)ClientToServerID.input)]
 
     private static void Input(ushort fromClientID,Message message)

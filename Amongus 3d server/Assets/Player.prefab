@@ -65,7 +65,7 @@ MonoBehaviour:
   player: {fileID: 2785429018060312173}
   camproxy: {fileID: 4721225547659215870}
   gravity: -10
-  speed: 0.5
+  speed: 1
   jump_height: 3
 --- !u!143 &8756245419340118165
 CharacterController:
